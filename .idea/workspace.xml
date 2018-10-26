@@ -1,8 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8c2e0-363e-4a33-9965-4b7ab93caad6" name="Default Changelist" comment="" />
+    <list default="true" id="3ce8c2e0-363e-4a33-9965-4b7ab93caad6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph-ambiguous-ancestor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph-wordnet.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph25.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/digraph9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms100-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms1000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms10000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms100K.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms11AmbiguousAncestor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms11ManyPathsOneAncestor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms15Path.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms15Tree.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms200K.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms300K.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms3InvalidCycle.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms3InvalidTwoRoots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms500-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms5000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms50000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms6InvalidCycle+Path.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms6InvalidCycle.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms6InvalidTwoRoots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms6TwoAncestors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms8ManyAncestors.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernyms8WrongBFS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/hypernymsManyPathsOneAncestor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast10a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast12a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast17.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast20.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast29.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast5a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast8a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast8b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast8c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/outcast9a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets100-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets1000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets10000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets500-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets5000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets50000-subgraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/resources/synsets8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/src/Outcast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/src/SAP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WordNet/src/WordNet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkstyle-suppressions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spotbugs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/" />
+    <ignored path="WordNet/WordNet.iml" />
+    <ignored path="WordNet/wordnet.zip" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,36 +130,67 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="770692942">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Queues/src/Permutation.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WordNet/src/WordNet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Queues/src/Deque.java">
+        <entry file="file://$PROJECT_DIR$/WordNet/src/SAP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WordNet/src/Outcast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Collinear/src/Coliinear.java" />
+        <option value="$PROJECT_DIR$/WordNet/src/WordNet.java" />
+        <option value="$PROJECT_DIR$/WordNet/src/SAP.java" />
+        <option value="$PROJECT_DIR$/WordNet/src/Outcast.java" />
       </list>
     </option>
   </component>
@@ -91,11 +200,13 @@
     <option name="width" value="1346" />
     <option name="height" value="701" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,25 +216,28 @@
             </path>
             <path>
               <item name="Algorithms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Queues" type="462c0819:PsiDirectoryNode" />
+              <item name="WordNet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Algorithms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WordNet" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540484358249" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/checkstyle-coursera.xml" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540587226852" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WordNet" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -189,14 +303,13 @@
     <frame x="-1" y="0" width="1368" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2688822" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49758455" visible="true" weight="0.27265862" />
+      <window_info id="Structure" order="1" sideWeight="0.5024155" side_tool="true" weight="0.27265862" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="SonarLint" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32847896" />
@@ -206,9 +319,10 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32901135" />
       <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info active="true" anchor="bottom" id="CheckStyle" order="11" visible="true" weight="0.32847896" />
+      <window_info anchor="bottom" id="CheckStyle" order="11" weight="0.32847896" />
+      <window_info anchor="bottom" id="SonarLint" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -291,6 +405,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WordNet/src/WordNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordNet/src/SAP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WordNet/src/Outcast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -343,7 +478,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Queues</last-edited>
+          <last-edited>WordNet</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
