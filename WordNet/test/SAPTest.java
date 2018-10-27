@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class SAPTest {
 
@@ -77,12 +79,6 @@ class SAPTest {
         assertEquals(2, sap.length(1, 6));
     }
 
-        private SAP getSAP(String file) {
-        In in = new In("/home/marcelo/Coding/Learning/Algorithms/WordNet/resources/" + file);
-        Digraph digraph = new Digraph(in);
-        return new SAP(digraph);
-    }
-
     @Test
     public void testDigraphWordnet() {
         SAP sap = getSAP("digraph-wordnet.txt");
@@ -125,5 +121,11 @@ class SAPTest {
         assertEquals(1, sap1.ancestor(1, 5));
         assertEquals(2, sap2.length(1, 5));
         assertEquals(0, sap2.ancestor(1, 5));
+    }
+
+    private SAP getSAP(String file) {
+        In in = new In("/home/marcelo/Coding/Learning/Algorithms/WordNet/resources/" + file);
+        Digraph digraph = new Digraph(in);
+        return new SAP(digraph);
     }
 }
