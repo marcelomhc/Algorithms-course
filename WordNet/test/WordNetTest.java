@@ -35,7 +35,7 @@ class WordNetTest {
 
     @Test
     public void testSyntest15() {
-        wordNet = new WordNet(SYNSETS15, HYPERNYMS15);
+        new WordNet(SYNSETS15, HYPERNYMS15);
     }
 
     @Test

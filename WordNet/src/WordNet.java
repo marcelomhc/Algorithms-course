@@ -53,6 +53,7 @@ public class WordNet {
         if(roots != 1) {
             throw new IllegalArgumentException("WordNet must be a DAG");
         }
+        sap = new SAP(graph);
     }
 
     // returns all WordNet nouns
