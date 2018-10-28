@@ -1,5 +1,6 @@
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -98,6 +99,7 @@ class SAPTest {
         assertEquals(19, sap.length(List.of(30788), List.of(27052, 52251)));
         assertEquals(16, sap.length(List.of(39384, 46181), List.of(29940)));
         assertEquals(8, sap.length(List.of(49584, 67185), List.of(17189, 57416)));
+        assertEquals(12, sap.length(List.of(36133, 61624), List.of(38758, 59864)));
     }
 
     @Test

@@ -139,20 +139,20 @@ public class SAP {
         int shortestAncestor = -1;
         while (!qV.isEmpty() || !qW.isEmpty()) {
             ancestor = singleBfsStep(wSearch, visited, qV);
-            if(ancestor != -1 && wSearch.distTo(ancestor) < dist) {
+            if(ancestor != -1 && wSearch.distTo(ancestor) + vSearch.distTo(ancestor) < dist) {
                 shortestAncestor = ancestor;
-                dist = wSearch.distTo(shortestAncestor);
+                dist = wSearch.distTo(ancestor) + vSearch.distTo(ancestor);
             }
 
             ancestor = singleBfsStep(vSearch, visited, qW);
-            if(ancestor != -1 && vSearch.distTo(ancestor) < dist) {
+            if(ancestor != -1 && wSearch.distTo(ancestor) + vSearch.distTo(ancestor) < dist) {
                 shortestAncestor = ancestor;
-                dist = vSearch.distTo(shortestAncestor);
+                dist = wSearch.distTo(ancestor) + vSearch.distTo(ancestor);
             }
-            steps++;
-            if (steps > dist) {
-                return shortestAncestor;
-            }
+//            steps++;
+//            if (steps > dist) {
+//                return shortestAncestor;
+//            }
         }
         return shortestAncestor;
     }
