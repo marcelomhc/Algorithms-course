@@ -1,6 +1,5 @@
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,14 +13,15 @@ public class WordNet {
 
     // constructor takes the name of the two input files
     public WordNet(String synsets, String hypernyms) {
-        wordNet = new HashMap<>(10000);
-        synonims = new ArrayList<>(10000);
+        wordNet = new HashMap<>();
+        synonims = new ArrayList<>();
+        int size = 0;
 
         In synIn = new In(synsets);
         while (synIn.hasNextLine()) {
             String line = synIn.readLine();
             String[] tokens = line.split(",");
-            int id = Integer.valueOf(tokens[0]);
+            int id = Integer.parseInt(tokens[0]);
             String[] nouns = tokens[1].split(" ");
             synonims.add(id, tokens[1]);
             for (String noun : nouns) {
@@ -32,15 +32,16 @@ public class WordNet {
                 vertexes.add(id);
                 wordNet.put(noun, vertexes);
             }
+            size++;
         }
 
         In hyperIn = new In(hypernyms);
-        String[] lines = hyperIn.readAllLines();
-        Digraph graph = new Digraph(lines.length);
-        for (String line : lines) {
+        Digraph graph = new Digraph(size);
+        while (hyperIn.hasNextLine()) {
+            String line = hyperIn.readLine();
             String[] edges = line.split(",");
             for (int i=1; i<edges.length; i++) {
-                graph.addEdge(Integer.valueOf(edges[0]), Integer.valueOf(edges[i]));
+                graph.addEdge(Integer.parseInt(edges[0]), Integer.parseInt(edges[i]));
             }
         }
         for(int i=0; i<graph.V(); i++) {

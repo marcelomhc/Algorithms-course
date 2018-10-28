@@ -56,6 +56,7 @@ class SAPTest {
         SAP sap = getSAP("digraph3.txt");
 
         assertEquals(4, sap.length(0, 7));
+        assertEquals(6, sap.length(13, 7));
     }
 
     @Test
@@ -77,20 +78,26 @@ class SAPTest {
         SAP sap = getSAP("digraph9.txt");
 
         assertEquals(2, sap.length(1, 6));
+        assertEquals(4, sap.length(7, 5));
     }
 
     @Test
     public void testDigraphWordnet() {
         SAP sap = getSAP("digraph-wordnet.txt");
 
+        assertEquals(11, sap.length(38578, 49964));
         assertEquals(8, sap.length(49485, 38982));
         assertEquals(8, sap.length(List.of(49485), List.of(38982)));
+        assertEquals(11, sap.length(List.of(23653), List.of(18723)));
 
         assertEquals(13, sap.length(List.of(18395), List.of(49224)));
         assertEquals(10, sap.length(List.of(43416), List.of(41812, 53506)));
         assertEquals(6, sap.length(List.of(30121, 42237), List.of(59057)));
         assertEquals(15, sap.length(List.of(13197, 71017), List.of(36369, 48457)));
         assertEquals(-1, sap.length(List.of(), List.of(11666, 27253, 55970, 72627, 73960)));
+        assertEquals(19, sap.length(List.of(30788), List.of(27052, 52251)));
+        assertEquals(16, sap.length(List.of(39384, 46181), List.of(29940)));
+        assertEquals(8, sap.length(List.of(49584, 67185), List.of(17189, 57416)));
     }
 
     @Test
