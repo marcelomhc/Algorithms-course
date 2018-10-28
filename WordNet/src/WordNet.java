@@ -44,13 +44,15 @@ public class WordNet {
                 graph.addEdge(Integer.parseInt(edges[0]), Integer.parseInt(edges[i]));
             }
         }
+        int roots = 0;
         for(int i=0; i<graph.V(); i++) {
             if (graph.outdegree(i) == 0) {
-                sap = new SAP(graph);
-                return;
+                roots++;
             }
         }
-        throw new IllegalArgumentException("WordNet must be a DAG");
+        if(roots != 1) {
+            throw new IllegalArgumentException("WordNet must be a DAG");
+        }
     }
 
     // returns all WordNet nouns
