@@ -5,9 +5,16 @@ import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 public class SAP {
 
     private final Digraph digraph;
+    private Map<Set<Integer>, Integer> lengthMemoized;
+    private Map<Set<Integer>, Integer> ancestorMemoized;
 
     // constructor takes a digraph (not necessarily a DAG)
     public SAP(Digraph digraph) {
@@ -15,26 +22,42 @@ public class SAP {
             throw new IllegalArgumentException();
         }
         this.digraph = new Digraph(digraph);
+        lengthMemoized = new HashMap<>();
+        ancestorMemoized = new HashMap<>();
     }
 
     // length of shortest ancestral path between v and w; -1 if no such path
     public int length(int v, int w) {
-        BreadthFirstDirectedPaths vSearch = new BreadthFirstDirectedPaths(digraph, v);
-        BreadthFirstDirectedPaths wSearch = new BreadthFirstDirectedPaths(digraph, w);
+        Set<Integer> set = new HashSet<>();
+        set.add(v);
+        set.add(w);
+        if(!lengthMemoized.containsKey(set)) {
 
-        int commonAncestor = getCommonAncestor(v, w, vSearch, wSearch);
-        if(commonAncestor != -1) {
-            return vSearch.distTo(commonAncestor) + wSearch.distTo(commonAncestor);
+            BreadthFirstDirectedPaths vSearch = new BreadthFirstDirectedPaths(digraph, v);
+            BreadthFirstDirectedPaths wSearch = new BreadthFirstDirectedPaths(digraph, w);
+
+            int commonAncestor = getCommonAncestor(v, w, vSearch, wSearch);
+            if (commonAncestor != -1) {
+                lengthMemoized.put(set, vSearch.distTo(commonAncestor) + wSearch.distTo(commonAncestor));
+                return lengthMemoized.get(set);
+            }
+            lengthMemoized.put(set, -1);
         }
-        return -1;
+        return lengthMemoized.get(set);
     }
 
     // a common ancestor of v and w that participates in a shortest ancestral path; -1 if no such path
     public int ancestor(int v, int w) {
-        BreadthFirstDirectedPaths vSearch = new BreadthFirstDirectedPaths(digraph, v);
-        BreadthFirstDirectedPaths wSearch = new BreadthFirstDirectedPaths(digraph, w);
+        Set<Integer> set = new HashSet<>();
+        set.add(v);
+        set.add(w);
+        if(!ancestorMemoized.containsKey(set)) {
+            BreadthFirstDirectedPaths vSearch = new BreadthFirstDirectedPaths(digraph, v);
+            BreadthFirstDirectedPaths wSearch = new BreadthFirstDirectedPaths(digraph, w);
+            ancestorMemoized.put(set, getCommonAncestor(v, w, vSearch, wSearch));
+        }
+        return ancestorMemoized.get(set);
 
-        return getCommonAncestor(v, w, vSearch, wSearch);
     }
 
     // length of shortest ancestral path between any vertex in v and any vertex in w; -1 if no such path
