@@ -1,9 +1,5 @@
 import edu.princeton.cs.algs4.Picture;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.min;
-import static java.lang.Math.sqrt;
-
 public class SeamCarver {
     private int[] currentPicture;
     private double[] energy;
@@ -62,7 +58,7 @@ public class SeamCarver {
             if (energy[pos] == -1) {
                 int dX = calculateDeltaX(x, y);
                 int dY = calculateDeltaY(x, y);
-                energy[pos] = sqrt(dX + dY);
+                energy[pos] = Math.sqrt(dX + dY);
             }
         }
         return energy[pos];
@@ -197,7 +193,7 @@ public class SeamCarver {
         }
         int last = seam[0];
         for(int idx = 1; idx < seam.length; idx++) {
-            if(abs(last-seam[idx]) > 1) {
+            if(Math.abs(last-seam[idx]) > 1) {
                 throw new IllegalArgumentException("Seam is not valid");
             }
             last = seam[idx];
