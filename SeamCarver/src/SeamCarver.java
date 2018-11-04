@@ -90,19 +90,20 @@ public class SeamCarver {
                     double mid;
                     double right;
                     int prevRow = row - 1;
+
                     if(isFirst(col)) {
                         left = Double.MAX_VALUE;
-                        mid = energySum[get1dIdx(col, prevRow)];
-                        right = energySum[get1dIdx(col+1, prevRow)];
-                    } else if(isLastCol(col)) {
-                        left = energySum[get1dIdx(col-1, prevRow)];
-                        mid = energySum[get1dIdx(col, prevRow)];
+                    } else {
+                        left = energySum[get1dIdx(col - 1, prevRow)];
+                    }
+
+                    if(isLastCol(col)) {
                         right = Double.MAX_VALUE;
                     } else {
-                        left = energySum[get1dIdx(col-1, prevRow)];
-                        mid = energySum[get1dIdx(col, prevRow)];
                         right = energySum[get1dIdx(col+1, prevRow)];
                     }
+
+                    mid = energySum[get1dIdx(col, prevRow)];
 
                     if (mid < left) {
                         if (right < mid) {
@@ -161,7 +162,7 @@ public class SeamCarver {
         if(seam == null) {
             throw new IllegalArgumentException("Seam cannot be null");
         }
-        if(width() == 1) {
+        if(width() <= 1) {
             throw new IllegalArgumentException("Picture cannot be reduced anymore");
         }
         validateSeam(seam);
@@ -175,7 +176,9 @@ public class SeamCarver {
             System.arraycopy(currentPicture, row*width(), newPicture, row*newWidth, colToRemove);
             System.arraycopy(currentPicture, row*width()+colToRemove+1, newPicture, row*newWidth+colToRemove, newWidth-colToRemove);
             energy[get1dIdx(colToRemove, row)] = -1;
-            energy[get1dIdx(colToRemove-1, row)] = -1;
+            if(colToRemove != 0) {
+                energy[get1dIdx(colToRemove - 1, row)] = -1;
+            }
         }
 
         setWidth(newWidth);
@@ -206,13 +209,13 @@ public class SeamCarver {
     }
 
     private int get2dCol(int idx) {
-        if(isTranspose) return idx / height();
-        return idx % width();
+        if(isTranspose) return idx / height;
+        return idx % width;
     }
 
     private int get2dRow(int idx) {
-        if(isTranspose) return idx % height();
-        return idx / width();
+        if(isTranspose) return idx % height;
+        return idx / width;
     }
 
     private boolean isBorderPixel(int col, int row) {
