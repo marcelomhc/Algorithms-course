@@ -29,7 +29,7 @@ public class SeamCarver {
 
     // current picture
     public Picture picture() {
-        Picture myPicture = new Picture(width, height);
+        Picture myPicture = new Picture(width(), height());
         for (int idx = 0; idx < currentPicture.length; idx++) {
             myPicture.setRGB(get2dCol(idx), get2dRow(idx), currentPicture[idx]);
         }
@@ -169,25 +169,55 @@ public class SeamCarver {
 
         int newWidth = width() - 1;
         int[] newPicture = new int[newWidth * height()];
+        double[] newEnergy = new double[newWidth * height()];
 
         //Update picture
-        for(int row = 0; row < seam.length; row++) {
-            int colToRemove = seam[row];
-            System.arraycopy(currentPicture, row*width(), newPicture, row*newWidth, colToRemove);
-            System.arraycopy(currentPicture, row*width()+colToRemove+1, newPicture, row*newWidth+colToRemove, newWidth-colToRemove);
-            energy[get1dIdx(colToRemove, row)] = -1;
-            if(colToRemove != 0) {
-                energy[get1dIdx(colToRemove - 1, row)] = -1;
+        if(!isTranspose) {
+            for(int row = 0; row < seam.length; row++) {
+                int colToRemove = seam[row];
+                System.arraycopy(currentPicture, get1dIdx(0, row), newPicture, row * newWidth, colToRemove);
+                if (colToRemove != 0) {
+                    System.arraycopy(energy, get1dIdx(0, row), newEnergy, row * newWidth, colToRemove - 1);
+                    newEnergy[row * newWidth + colToRemove - 1] = -1;
+                }
+                if(colToRemove < newWidth) {
+                    System.arraycopy(currentPicture, get1dIdx(colToRemove + 1, row), newPicture, row * newWidth + colToRemove, newWidth - colToRemove);
+                    System.arraycopy(energy, get1dIdx(colToRemove + 1, row), newEnergy, row * newWidth + colToRemove, newWidth - colToRemove);
+                    newEnergy[row * newWidth + colToRemove] = -1;
+                }
+            }
+        } else {
+            for(int row = 0; row < seam.length; row++) {
+                int colToRemove = seam[row];
+                for (int col = 0; col < colToRemove; col++) {
+                    newPicture[get1dIdx(col, row)] = currentPicture[get1dIdx(col, row)];
+                    newEnergy[get1dIdx(col, row)] = energy[get1dIdx(col, row)];
+                }
+                for (int col = colToRemove + 1; col < width(); col++) {
+                    newPicture[get1dIdx(col - 1, row)] = currentPicture[get1dIdx(col, row)];
+                    newEnergy[get1dIdx(col - 1, row)] = energy[get1dIdx(col, row)];
+                }
+                if (colToRemove != 0) {
+                    newEnergy[get1dIdx(colToRemove - 1, row)] = -1;
+                }
+                if (colToRemove < newWidth) {
+                    newEnergy[get1dIdx(colToRemove, row)] = -1;
+                }
             }
         }
 
         setWidth(newWidth);
+        energy = newEnergy;
         currentPicture = newPicture;
     }
 
     private void setWidth(int newValue) {
-        if(isTranspose) height = newValue;
+        if(isTranspose) {
+            height = newValue;
+            return;
+        }
         width = newValue;
+        return;
     }
 
     private void validateSeam(int[] seam) {
@@ -195,9 +225,12 @@ public class SeamCarver {
             throw new IllegalArgumentException("Seam length differ from picture");
         }
         int last = seam[0];
-        for(int idx = 1; idx < seam.length; idx++) {
+        for(int idx = 0; idx < seam.length; idx++) {
             if(Math.abs(last-seam[idx]) > 1) {
                 throw new IllegalArgumentException("Seam is not valid");
+            }
+            if(seam[idx] < 0 || seam[idx] >= width()) {
+                throw new IllegalArgumentException("Seam contains invalid entry");
             }
             last = seam[idx];
         }
