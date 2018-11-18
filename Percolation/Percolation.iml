@@ -14,15 +14,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="module-library">
-      <library name="algs4.jar">
-        <CLASSES>
-          <root url="file://C:/Users/Marcelo/Documents/Coding/Algorithms/algs4.jar" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="algs4" level="project" />
   </component>
 </module>
