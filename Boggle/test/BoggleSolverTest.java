@@ -158,6 +158,17 @@ class BoggleSolverTest {
         testYawlDictFor(26539);
     }
 
+    @Test
+    public void testScore() {
+        In in = new In(DICTIONARY_ALGS4);
+        BoggleSolver solver = new BoggleSolver(in.readAllStrings());
+        solver.scoreOf("Y");
+
+        in = new In(DICTIONARY_YAWL);
+        solver = new BoggleSolver(in.readAllStrings());
+        solver.scoreOf("UNSUNN");
+    }
+
     private void testYawlDictFor(int points) {
         In in = new In(DICTIONARY_YAWL);
         BoggleSolver solver = new BoggleSolver(in.readAllStrings());

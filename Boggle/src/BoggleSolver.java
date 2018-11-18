@@ -1,4 +1,3 @@
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -10,7 +9,7 @@ public class BoggleSolver {
     // Initializes the data structure using the given array of strings as the dictionary.
     // (You can assume each word in the dictionary contains only the uppercase letters A through Z.)
     public BoggleSolver(String[] dictionary) {
-        root = new Node(0);
+        root = new Node();
 
         for(String word : dictionary) {
             Node currentNode = root;
@@ -39,38 +38,39 @@ public class BoggleSolver {
 
     private Set<String> getValidWords(BoggleBoard board, Node letterNode, boolean[][] visited, int row, int col) {
         Set<String> validWords = new HashSet<>();
+        if(row == -1 || col == -1 || row == board.rows() || col == board.cols()) return validWords;
         if(visited[row][col]) return validWords;
-        visited[row][col] = true;
 
-        Node nextLetterNode = letterNode.getLetterNode(board.getLetter(row, col));
+        Node nextLetterNode = getNextLetterNode(letterNode, board.getLetter(row, col));
         if(nextLetterNode == null) {
-            visited[row][col] = false;
             return validWords;
         }
 
         String word = nextLetterNode.getWord();
         if(word != null && word.length() > 2) validWords.add(word);
+        if(nextLetterNode.isLeaf()) return validWords;
 
-        boolean isFirstRow = row == 0;
-        boolean isFirstCol = col == 0;
-        boolean isLastRow = row == board.rows() - 1;
-        boolean isLastCol = col == board.cols() - 1;
+        visited[row][col] = true;
 
-        if(!isFirstRow) {
-            if(!isFirstCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row - 1, col - 1));
-            validWords.addAll(getValidWords(board, nextLetterNode, visited, row - 1, col));
-            if(!isLastCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row -1, col + 1));
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                validWords.addAll(getValidWords(board, nextLetterNode, visited, row+i, col+j));
+            }
         }
-        if(!isLastRow) {
-            if(!isFirstCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row + 1, col - 1));
-            validWords.addAll(getValidWords(board, nextLetterNode, visited, row + 1, col));
-            if(!isLastCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row + 1, col + 1));
-        }
-        if(!isFirstCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row, col - 1));
-        if(!isLastCol) validWords.addAll(getValidWords(board, nextLetterNode, visited, row, col + 1));
 
         visited[row][col] = false;
         return validWords;
+    }
+
+    private Node getNextLetterNode(Node letterNode, char letter) {
+        Node nextLetterNode = letterNode.getLetterNode(letter);
+        if(letter != 'Q') {
+            return nextLetterNode;
+        }
+        if(nextLetterNode != null) {
+            nextLetterNode = nextLetterNode.getLetterNode('U');
+        }
+        return nextLetterNode;
     }
 
     // Returns the score of the given word if it is in the dictionary, zero otherwise.
@@ -81,7 +81,7 @@ public class BoggleSolver {
             currentNode = currentNode.getLetterNode(word.charAt(i));
             if(currentNode == null) return 0;
         }
-        if (!currentNode.getWord().equalsIgnoreCase(word)) return 0;
+        if (currentNode.getWord() == null) return 0;
 
         int size = word.length();
 
@@ -95,21 +95,15 @@ public class BoggleSolver {
 
     private class Node {
         private Map<Character, Node> children;
-        private int depth;
         private String word;
 
-        public Node(int depth) {
+        public Node() {
             this.children = new HashMap<>();
-            this.depth = depth;
             this.word = null;
         }
 
         public Node getLetterNode(char letter) {
             return children.get(letter);
-        }
-
-        public int getDepth() {
-            return depth;
         }
 
         public String getWord() {
@@ -123,9 +117,13 @@ public class BoggleSolver {
         public Node getOrCreate(char letter) {
             if (children.containsKey(letter)) return children.get(letter);
 
-            Node letterNode = new Node(this.depth + 1);
+            Node letterNode = new Node();
             children.put(letter, letterNode);
             return letterNode;
+        }
+
+        public boolean isLeaf() {
+            return children == null;
         }
     }
 }
