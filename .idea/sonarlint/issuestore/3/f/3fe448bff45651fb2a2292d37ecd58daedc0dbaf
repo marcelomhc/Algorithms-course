@@ -1,0 +1,21 @@
+
+<squid:S16592" Declare "j1" on a separate line.(ÇÈÎ´ıÿÿÿÿ
+<squid:S16592" Declare "i2" on a separate line.(ÇÈÎ´ıÿÿÿÿ
+<squid:S16592" Declare "j2" on a separate line.(ÇÈÎ´ıÿÿÿÿ
+Nsquid:S1197"8Move the array designator from the variable to the type.(¢Ä¬V
+psquid:S2293Z"YReplace the type specification in this constructor call with the diamond operator ("<>").(§€Ÿ
+gsquid:S1206M"PThis class overrides "equals()" and should therefore also override "hashCode()".(Õáµ¨
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(¦¥õ×ùÿÿÿÿ
+U
+squid:S106‚"9Replace this use of System.out or System.err by a logger.(ß¾ò‡ùÿÿÿÿ
+U
+squid:S106ƒ"9Replace this use of System.out or System.err by a logger.(Ó¿Ê§ûÿÿÿÿ
+1squid:S1220""Move this file to a named package.
+@squid:S1481Q")Remove this unused "that" local variable.(òİĞÑ
+>squid:S1481Z"'Remove this unused "st" local variable.(§€Ÿ
+Asquid:S00108f")Either remove or fill this block of code.(İªáª
+Esquid:S2275o")An 'int' is expected rather than a int[].(ê‘íÚúÿÿÿÿ
+Osquid:S1854Q"8Remove this useless assignment to local variable "that".(òİĞÑ
+Msquid:S1854Z"6Remove this useless assignment to local variable "st".(§€Ÿ
+Vsquid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
